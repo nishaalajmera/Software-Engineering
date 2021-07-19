@@ -7,7 +7,9 @@
     - What does each notation mean O(n) O(n2)?
     - Ask about O(1)
 
-- [DEMO] Show the execution time using FIB with loops and with Recursion
+- [DEMO]: Show the execution time using FIB with loops and with Recursion 
+
 
 - Space complexity: Inefficient use of disk is often overlooked 
-- Examples (Searching, Sorting, Recursion)
+
+- [DEMO]: Show the generators with getsizeof. Compare their sizes seeing that generators are more efficient
