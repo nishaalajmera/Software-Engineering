@@ -13,3 +13,5 @@
 - Space complexity: Inefficient use of disk is often overlooked 
 
 - [DEMO]: Show the generators with getsizeof. Compare their sizes seeing that generators are more efficient
+
+- Explain that there are many complexities: Binary search has log N complexity, 
