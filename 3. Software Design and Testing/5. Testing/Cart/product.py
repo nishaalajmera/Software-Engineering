@@ -10,9 +10,9 @@ class Product:
     def transform_color_for_sku(self):
         return self.color.upper()
 
-    def generate_sku(self):  # <2>
+    def generate_sku(self):
         """
-        Generates a SKU for this product.
+        Generates a Stock Keeping Unit (SKU) for this product.
         Example:
             >>> small_black_shoes = Product('shoes', 'S', 'black')
             >>> small_black_shoes.generate_sku()
