@@ -1,5 +1,6 @@
-from Cart.product import Product
+from .product import Product
 import unittest
+
 
 class TestProduct(unittest.TestCase):
     def test_transform_name(self):

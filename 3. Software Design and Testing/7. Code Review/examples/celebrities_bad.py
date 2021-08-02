@@ -1,13 +1,9 @@
-'''
-This script contains a class for representing the date.
-Additionally, the class Scraper get the HTML code of a
-Wikipedia page and extracts the name of celebrities that
-were born in a certain date
-'''
+from datetime import datetime
+from bs4 import BeautifulSoup
 import re
 import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
+import numpy as np
+import pandas as pd
 
 
 class Date:
@@ -21,30 +17,17 @@ class Date:
         month (int): The month of the date.
         day (int): The day of the date.
     '''
-    _day_of_month = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-    _month_str = ('January', 'February', 'March',
-                  'April', 'May', 'June',
-                  'July', 'August', 'September',
-                  'October', 'November', 'December')
+    _day_of_month =(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+    _month_str = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
 
     def __init__(self, day: int, month: int, year: int):
-        '''
-        See help(Date) for accurate signature
-        '''
         if not self.is_date_valid(day, month, year):
             raise ValueError('Date not valid')
 
         self.year = year
         self.month = month
         self.day = day
-
     def __str__(self):
-        '''
-        This function is used to return the string representation of the date.
-
-        Returns:
-            str: The string representation of the date.
-        '''
         return "{0}-{1}-{2}".format(self.day, self.month, self.year)
 
     def __repr__(self):
@@ -57,15 +40,8 @@ class Date:
         return "{0}-{1}-{2}".format(self.day, self.month, self.year)
 
     def __eq__(self, other):
-        '''
-        This function is used to compare the date with other date.
-
-        Args:
-            other (Date): The other date to be compared with.
-
-        Returns:
-            bool: True if the date is equal to the other date, False otherwise.
-        '''
+        
+        
         return self.year == other.year and self.month == other.month and \
             self.day == other.day
 
@@ -82,7 +58,7 @@ class Date:
         '''
         if self.year < other.year:
             return True
-        elif self.year == other.year:
+        elif self.year==other.year:
             if self.month < other.month:
                 return True
             elif self.month == other.month:
@@ -132,7 +108,9 @@ class Date:
         Returns:
             Date: The date created from the string.
         '''
-        day, month, year = map(int, date_as_string.split('-'))
+        day = int(date_as_string.split('-')[0])
+        month = int(date_as_string.split('-')[1])
+        year = int(date_as_string.split('-')[2])
         return cls(day, month, year)
 
     @classmethod
@@ -150,7 +128,7 @@ class Date:
         day, month, year = cur_day.day, cur_day.month, cur_day.year
         return cls(day, month, year)
 
-    def to_wiki_format(self):
+    def to_Wiki_Format(self):
         '''
         Returns the date into a format legible by the Wikipedia URL
 
