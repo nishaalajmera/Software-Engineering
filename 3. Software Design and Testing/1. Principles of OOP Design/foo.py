@@ -3,7 +3,7 @@ I am here to see if the documentation of a module works!
 '''
 from bs4 import BeautifulSoup  # type: ignore
 import requests
-x = 'I am "x" in "foo.py"'
+x = 'I have changed'
 y = 'Y am I here?'
 
 
