@@ -1,8 +1,8 @@
-from .product import Product
+from product import Product
 import unittest
 
 
-class TestProduct(unittest.TestCase):
+class ProductTestCase(unittest.TestCase):
     def test_transform_name(self):
         small_black_shoes = Product('shoes', 'S', 'black')
         expected_value = 'SHOES'

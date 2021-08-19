@@ -12,7 +12,7 @@ class Date:
         month (int): The month of the date.
         day (int): The day of the date.
     '''
-    def __init__(self, year: int, month: int, day: int):
+    def __init__(self, year, month, day):
         '''
         See help(Date) for accurate signature
         '''
@@ -89,7 +89,7 @@ class Date:
             day >= 1 and day <= 31
 
     @classmethod
-    def from_string(cls, date_as_string):
+    def from_string(cls, date_as_string: str) -> Date:
         '''
         This function is used to create a date from a string.
 
